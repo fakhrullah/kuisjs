@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html manifest="off.manifest">
+<head>
+	<title>kuis</title>
+	<meta name="viewport" content="width=device-width, height=device-height, user-scalable=no" />
+	<script src="jquery-2.0.3.min.js"></script>
+	<script src="modernizr.custom.js" ></script>
+	<script src="data.js" ></script>
+	<style>
+	body{
+		margin:0;
+		font-family: Ubuntu,Helvetica,Roboto, HelveticaNeue;
+		background-color:#000;
+	}
+	.qa {
+		background-color: rgba(0, 0, 0, 0.6);
+		padding: 5px 10px;
+	}
+	#q{
+		margin:10px 0;
+		color: #DDFFDD;
+	}
+	.qa img{
+		display:block;
+		margin:0 auto;
+		max-width:100%;
+	}
+	.hidden{
+		visibility:hidden;
+	}
+	.hide{
+		display:none;
+	}.show{
+	}
+	.lists ul,.qa>ul{
+		margin:0;padding:0;
+	}
+	.lists li,.qa>ul li{
+		list-style:none;
+		display:inline-block;
+		width:220px;
+		background-color:aqua;
+		padding:5px;margin:5px;
+		-webkit-border-radius:3px;
+		border-radius:3px;
+		cursor:pointer;
+		text-align:center;
+	}
+	.lists .corrected{
+		background-color: rgba(0, 255, 0, 0.1) !important;
+                border-color: rgba(0, 0, 0, 0);
+                color: #55FF55;
+	}
+	.equation {
+		display: block;
+		margin: 5px 0;
+		text-align: center;
+	}
+	.qa li{
+		text-align:left;
+	}
+	.lists li{
+		background-color: rgba(0, 20, 0, 0.9);
+		border-radius: 0;
+		border-right: 1px solid #AAAAAA;
+		border-top: 1px solid #AAAAAA;
+		color: #AAAAAA;
+		font-size: 30px;
+		height: 40px;
+		margin: 0;
+		width: 40px;
+	}
+	.choices.chosed {
+		background-color:red;
+	}
+	.ans.chosed {
+		background-color:lime;
+	}
+	#body-wrap{
+		border-radius: 18px 18px 0 0;
+		margin: 0;
+		padding: 5px;
+		position: relative;
+		overflow:hidden;
+	}
+	#body-design{
+		-webkit-border-radius:18px;
+		border-radius:18px;
+		background-image: url("images/green-wall-1.png");
+		background-repeat: no-repeat;
+		background-size: 120% auto;
+		width:100%;
+		height:100%;
+		position:fixed;
+                top:0px;
+                left:0px;
+	}
+	.lists{
+		margin: 0 auto;
+		padding: 0;
+	    width: 90%;
+	}
+	.qa{
+		position:relative;
+	}
+        /*extra class*/
+        .lists .chap-one{
+            background-color: rgba(200,100,140,0.5);
+        }
+	/*____ navigation____*/
+	.nav{
+		text-align:center;
+	}
+	.nav-buttons a{
+		color: #44CC44;
+		font-size:250%;
+		font-weight:bold;
+		text-decoration:none;
+	}
+	#qaId{
+		-webkit-border-radius: 15px;
+		border-radius: 15px;
+		height: 30px;
+		position: absolute;
+		right: 20px;
+		top: 20px;
+		text-align: center;
+		width: 30px;
+		line-height:30px;
+		color:#ddd;
+		background-color:#777;
+	}
+	#qaId.corrected{background-color:#0f0;}
+	</style>
+</head>
+<body>
+<div id="body-design"></div>
+<div id="body-wrap">
+	<section class="nav">
+		<div class="nav-buttons">
+			<a id="prev" href="#" class="hidden"> &#8678; </a>
+			<a id="home" href="#"> &szlig; </a>
+			<a id="next" href="#" class="hidden"> &#8680; </a>
+		</div>
+		<div id="qaId" class="hidden"></div>
+	</section>
+	<section class="lists show">
+	</section>
+	<section class="qa hide">
+	</section>
+</div>
+	<script src="kuis.js" ></script>
+</body>
+</html>
